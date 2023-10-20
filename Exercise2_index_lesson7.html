@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- some meta data to specify the type of reading -->
+        <meta charset="UTF-8" author="name" content="Grace">
+        <!-- linking to the CSS file -->
+        <link rel="stylesheet" href="css/Exercise2_style_lesson7.css">
+        <!-- specifying the font by GoogleFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script&display=swap" rel="stylesheet">
+        <title>BucketList</title>
+        <!-- Adding some STYLE-area just in case -->
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h2>My Bucket List</h2>
+        <br>
+        <br>
+        <!-- Creating a container to place elements -->
+        <div class="container">
+            <!-- Adding backgroung -->
+            <img src="img/cute-bckg.jpg">
+            <div class="centered">
+                <form method="post"><!-- post as method instead of GET becuase we have to learn more about php&servers -->
+                    <h3 id="list">What do you want to buy today?</h3>
+                    <br>
+                    <br>
+                    <div class="forml>">
+                        <form name="groceries">
+                            <!-- a few boxes to insert data -->
+                            <input type="text" name="" value="food" id="food">
+                            <br>
+                            <br>
+                            <input type="text" name="" value="amount" id="amount">
+                            <br>
+                            <br>
+                            <!-- specifying the unit just in case -->
+                            <select id="unit">
+                                <option value="oz">ounces</option>
+                                <option value="kg">kg</option>
+                                <option value="servings">servings</option>
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <button onclick="addToList()" type="button" name="button" id="addButton"><h4>Ingredients for Something Delicius</h4></button>
+                            <br>
+                            
+                        </form>
+                    </div>
+                </form>
+                <ul id="foodlist"></ul><!-- adding a list as request -->
+            </div>
+            <br>
+            <br>
+            
+        </div>
+        <hr><!-- adding a line to decorate empty space  -->
+        <textarea class="notes">Add some notes carefully </textarea><!-- adding a little box as a NoteBox -->
+    </body>
+    <footer></footer>
+    <!-- adding the javascript command here =)  -->
+    <script>
+        function addToList() {
+    let food = document.getElementById("food").value;
+    let amount = document.getElementById("amount").value;
+    let unit = document.getElementById("unit").value;
+  
+    document.getElementById("foodlist").innerHTML += // += because the main request is to add an element without delete it when we write down another one
+      ('<li>'+food + ' ' + amount + ' ' + unit + '.</li>')
+  
+  };
+    </script>
+</html>
